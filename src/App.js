@@ -27,8 +27,12 @@ function App() {
       <SearchBar handleSearchInput={setSearchInput}  />
 
       <div className='imageContainer'>
-        <div onClick={() => setToggle(!toggle)}>
-          {toggle ? 'Downloaded images' : 'Nasa Search result'}
+        <div
+          className='toggle-container' 
+          onClick={() => setToggle(!toggle)}>
+          <div className='toggle'>
+            {toggle ? 'See Nasa Search Results' : 'See Saved Images'}
+          </div>
         </div>
 
         {!toggle && <Cards images={images}/>}

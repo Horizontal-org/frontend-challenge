@@ -1,5 +1,4 @@
-import './style.css';
-
+import './style.css'
 function Cards({ images }) {
 
   // move this to a hook
@@ -35,11 +34,17 @@ function Cards({ images }) {
               <img src={image.links[0].href} alt={image.data[0].title}/>
             </figure>
             <div>
-              <span>{image.data[0].title}</span>
-              <button onClick={() => handleSaveImage(
-                image.links[0].href,
-                image.data[0].title
-              )}>Download</button>
+              <div className='download-button-container'>
+                <div 
+                  className='download-button'
+                  onClick={() => handleSaveImage(
+                    image.links[0].href,
+                    image.data[0].title
+                  )}
+                >
+                  Save Image
+                </div>
+              </div>
             </div>
           </div>
         ))}

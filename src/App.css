@@ -1,7 +1,7 @@
 
 body {
   margin: 0;
-  padding: 16;
+  padding: 16px;
   font-family: Arial;
 }
 .post-list {
@@ -9,6 +9,17 @@ body {
   grid-template-columns: repeat(3, minmax(100px, 293px));
   justify-content: center;
   grid-gap: 28px;
+}
+.toggle-container{
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.toggle {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
 }
 .post {
   cursor: pointer;

@@ -1,0 +1,8 @@
+.download-button-container {
+    padding-top: 8px;
+}
+.download-button {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
