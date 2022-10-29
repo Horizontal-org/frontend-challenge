@@ -9,12 +9,28 @@ function SearchBar({ handleSearchInput }) {
 
   console.log(userLastSearch)
   return (
-    <div className='searchInput'>
-        <input 
-          type='text'
-          onChange={(e) => setKeyword(e.target.value)}
-          value={keyword}
-        />
+    <div>
+      <div className='search-container'>
+        <div className='search'>
+          <input 
+            className='search-term'
+            placeholder='Search a nasa related image'
+            type='text'
+            onChange={(e) => setKeyword(e.target.value)}
+            value={keyword}
+          />
+          <button 
+            className='search-button'
+            onClick={() => {
+              handleSearchInput(keyword)
+              handleUserLastSearch(keyword)
+            }}
+          >
+            Search
+          </button>
+        </div>
+
+
         <div>
           {userLastSearch.map(lastSearch => (
             <div>
@@ -22,13 +38,7 @@ function SearchBar({ handleSearchInput }) {
             </div>
           ))}
         </div>
-        <button onClick={() => {
-          handleSearchInput(keyword)
-          handleUserLastSearch(keyword)
-        }}
-        >
-          Search
-        </button>
+      </div>
     </div>
   );
 }

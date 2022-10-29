@@ -13,10 +13,12 @@ function SavedImagesGallery() {
   }, [])
 
   return (
-    <div>
+    <div className='post-list'>
         {savedImages.map( (image, index) => (
-          <div key={index}>
-            <img src={image.href} alt={image.title}/>
+          <div className='post' key={index}>
+            <figure className='post-image'>
+                <img src={image.href} alt={image.title}/>
+            </figure>
             <div>
               <span>{image.title}</span>
               

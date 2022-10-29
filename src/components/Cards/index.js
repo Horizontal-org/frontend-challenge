@@ -28,10 +28,12 @@ function Cards({ images }) {
     window.localStorage.setItem("saved_images", JSON.stringify(objectToInsert))
   }
   return (
-    <div>
+    <div className='post-list'>
         {images.map( (image, index) => (
-          <div key={index}>
-            <img src={image.links[0].href} alt={image.data[0].title}/>
+          <div className='post' key={index}>
+            <figure className='post-image'>
+              <img src={image.links[0].href} alt={image.data[0].title}/>
+            </figure>
             <div>
               <span>{image.data[0].title}</span>
               <button onClick={() => handleSaveImage(
