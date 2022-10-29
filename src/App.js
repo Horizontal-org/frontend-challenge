@@ -31,9 +31,9 @@ function App() {
 
       <div className='imageContainer'>
         <div
-          className='toggle-container' 
-          onClick={() => setToggle(!toggle)}>
-          <div className='toggle'>
+          className='toggle-container'
+        >
+          <div className='toggle' onClick={() => setToggle(!toggle)}>
             {toggle ? 'See Nasa Search Results' : 'See Saved Images'}
           </div>
         </div>
