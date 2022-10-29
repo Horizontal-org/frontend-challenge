@@ -8,11 +8,7 @@ function Cards({ images }) {
       title
     }
 
-    console.log(imageToSave)
-
     const storedImages = window.localStorage.getItem("saved_images")
-
-    console.log(JSON.parse(storedImages))
 
     if(!storedImages) {
         return window.localStorage.setItem("saved_images", JSON.stringify([imageToSave]))

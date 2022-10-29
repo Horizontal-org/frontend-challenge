@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './style.css';
 
 import useUserLastSearch from '../../hooks/useUserLastSearch';
@@ -7,7 +7,6 @@ function SearchBar({ handleSearchInput }) {
   const [ keyword, setKeyword ] = useState('')
   const { handleUserLastSearch, userLastSearch} = useUserLastSearch({ searchInput: keyword})
 
-  console.log(userLastSearch)
   return (
     <div>
       <div className='search-container'>
@@ -31,13 +30,18 @@ function SearchBar({ handleSearchInput }) {
         </div>
 
 
-        <div>
-          {userLastSearch.map(lastSearch => (
-            <div>
-              <div>{lastSearch}</div>
-            </div>
-          ))}
-        </div>
+        { userLastSearch.length > 0 && (
+          <div className='search-results'>
+            {userLastSearch.map(lastSearch => (
+              <div className='search-item' onClick={() => {
+                setKeyword(lastSearch)
+                handleSearchInput(keyword)
+              }}>
+                {lastSearch}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
